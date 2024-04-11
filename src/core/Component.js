@@ -5,18 +5,18 @@ export class Component extends HTMLElement {
     super();
     this.state = {};
     this.props = {};
-    this.template = null; ///// для работы с компайлингом
+    this.template = null; // для работы с компайлингом
   }
 
-  setState(callback) {
+  setState(state) {
     ///// обновляем состояние объекта
-    this.state = callback(this.state);
+    this.state = state;
     this.compile();
   }
 
   compile() {
     /// использует текущий шаблон, компилирует его с помощью Handlebars.compile
-    // и обновляет содержимое элемента с помощью полученного HTML.
+    // и обновляет содержимое элемента с помощью полученного HTML.  => перерисовывет верстку
     const template = Handlebars.compile(this.template);
     this.innerHTML = "";
     this.innerHTML = template(this.state);
