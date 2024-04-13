@@ -4,7 +4,7 @@ export class EventEmitter {
   }
 
   on(type, listener) {
-    this.eventTarget.addEventListenert(type, listener); //
+    this.eventTarget.addEventListener(type, listener); //
   } // подписывает класс на какое либо событие
 
   off(type, listener) {

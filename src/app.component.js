@@ -1,18 +1,16 @@
 import { Component } from "./core/Component";
 import template from "./app.template.hbs";
-import { ROUTES } from "./constants/routes";
+
+import "./core/Router";
+
+import "./pages/home-page/home-page.component";
+import "./pages/not-found/not-found.component";
 
 export class App extends Component {
   constructor() {
     super();
-    this.template = template({
-      routes: ROUTES,
-    });
-
-    this.state = {
-      firstName: "alex",
-      lastName: "klim",
-    };
+    this.template = template();
+    this.state = {};
   }
 }
 

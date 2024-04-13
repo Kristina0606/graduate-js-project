@@ -13,15 +13,11 @@ export class Router extends HTMLElement {
   } //  находит элемент с селектором “app-outlet” и сохраняет его в свойство outlet. Также создается пустой объект activeRoute.
 
   get routes() {
-    return Array.from(
-      this.querySelectorAll("app-route").map((route) => {
-        return {
-          path: new Route(route.getAttribute("path")),
-          title: route.getAttribute("title"),
-          component: route.getAttribute("component"),
-        };
-      })
-    );
+    return Array.from(this.querySelectorAll("app-route")).map((route) => ({
+      path: new Route(route.getAttribute("path")),
+      title: route.getAttribute("title"),
+      component: route.getAttribute("component"),
+    }));
   } // Этот геттер возвращает массив объектов маршрутов.
   //Метод querySelectorAll находит все элементы с селектором “app-route” и преобразует их в объекты маршрутов.
   // Каждый маршрут представлен объектом с полями path, title и component.
