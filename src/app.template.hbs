@@ -1,8 +1,10 @@
 <ui-loader loading="{{ isLoading }}" class-name="z-10 bg-white"></ui-loader>
 <div>
     <app-router>
-        <app-route path="/" title="Home page" component="home-page"></app-route>
-        <app-route path="/404" title="404 | Not found" component="not-found"></app-route>
+        <app-route path="/" title="Home Page" component="home-page"></app-route>
+        <app-route path="/primary/:id" title="Primary Page" component="primary-page"></app-route>
+        <app-route path="/favorites/:id" title="Favorites Page" component="favorites-page"></app-route>
+        <app-route path="/404" title="404 | Not Found" component="not-found"></app-route>
         <app-outlet></app-outlet>
     </app-router>
 </div>

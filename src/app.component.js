@@ -3,8 +3,10 @@ import template from "./app.template.hbs";
 
 import "./core/Router";
 
-import "./pages/home-page/home-page.component";
+import "./pages/home/home.component";
 import "./pages/not-found/not-found.component";
+import "./pages/primary/primary.component";
+import "./pages/favorites/favorites.component";
 
 export class App extends Component {
   constructor() {
