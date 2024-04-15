@@ -3,7 +3,7 @@ import template from "./router-button.template.hbs";
 import { eventEmitter } from "../../core/EventEmitter";
 import { EVENT_TYPES } from "../../constants/eventTypes";
 
-export class RouterButton extends Component {
+export class Button extends Component {
   constructor() {
     super();
 
@@ -28,4 +28,4 @@ export class RouterButton extends Component {
   }
 }
 
-customElements.define("route-button", RouterButton);
+customElements.define("ui-button", Button);

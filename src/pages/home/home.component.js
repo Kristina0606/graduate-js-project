@@ -1,7 +1,7 @@
 import { Component } from "../../core/Component";
 import template from "./home.template.hbs";
 
-import "../../components/router-button/router-button.component";
+import "../../components/router-link/router-link.component";
 
 export class HomePage extends Component {
   constructor() {
