@@ -3,6 +3,7 @@ export const ROUTES = {
   signIn: "/sign-in",
   signUp: "/sign-up",
   primary: "/primary",
+  film: "/film",
   favorites: "/favorites",
   notFound: "/404",
 };

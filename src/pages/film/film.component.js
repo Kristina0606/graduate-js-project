@@ -1,8 +1,9 @@
-import template from "./primary.template.hbs";
+import template from "./film.template.hbs";
 import { Component } from "../../core/Component";
+
 import { ROUTES } from "../../constants/routes";
 
-export class PrimaryPage extends Component {
+export class FilmPage extends Component {
   constructor() {
     super();
     this.template = template({
@@ -12,4 +13,4 @@ export class PrimaryPage extends Component {
   }
 }
 
-customElements.define("primary-page", PrimaryPage);
+customElements.define("film-page", FilmPage);
