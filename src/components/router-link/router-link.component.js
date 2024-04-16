@@ -21,7 +21,7 @@ export class RouterLink extends Component {
   };
 
   componentDidMount() {
-    this.addEventListener("click");
+    this.addEventListener("click", this.onClick);
   }
 
   componentWillUnmount() {

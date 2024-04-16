@@ -14,10 +14,12 @@
                 </h1>
             </div>
             <nav class="flex gap-5 pt-24 pb-56 justify-center">
-                <router-link href="" class="cursor-pointer w-72 text-center h-8 no-underline border-none rounded inline-block bg-white text-black  hover:bg-gray-300" label="Sign In">Sign In</router-link>
-                <router-link href=""
+                <route-link href="${props.routes.signIn}"
+                    class="cursor-pointer w-72 text-center h-8 no-underline border-none rounded inline-block bg-white text-black  hover:bg-gray-300" 
+                    label="Sign In"></route-link>
+                <route-link href="${props.routes.signUp}"
                     class="cursor-pointer w-72 text-center h-8 no-underline border-none rounded inline-block bg-white text-black  hover:bg-gray-300"
-                    label="Sign In">Sign Up</router-link>
+                    label="Sign Up"></route-link>
             </nav>
         </div>
         
