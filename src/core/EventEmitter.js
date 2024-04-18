@@ -15,7 +15,7 @@ export class EventEmitter {
     return this.eventTarget.dispatchEvent(
       new CustomEvent(type, { detail: data })
     );
-  } // публикует события
+  } // триггерит данные событие и передает ему какие либо данные через объект
 }
 
 export const eventEmitter = new EventEmitter();

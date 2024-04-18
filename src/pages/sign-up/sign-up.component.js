@@ -12,7 +12,9 @@ export class SignUp extends Component {
     this.template = template({
       routes: ROUTES,
     });
-    this.state = {};
+    this.state = {
+      isLoading: false,
+    };
   }
 }
 

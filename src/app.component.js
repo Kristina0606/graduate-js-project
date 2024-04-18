@@ -11,6 +11,7 @@ import "./pages/primary/primary.component";
 import "./pages/favorites/favorites.component";
 import "./pages/film/film.component";
 import "./pages/not-found/not-found.component";
+import "./components/toast/toast.component";
 
 export class App extends Component {
   constructor() {
@@ -18,7 +19,9 @@ export class App extends Component {
     this.template = template({
       routes: ROUTES,
     });
-    this.state = {};
+    this.state = {
+      isLoading: false,
+    };
   }
 }
 
