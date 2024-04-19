@@ -23,3 +23,5 @@ export class AuthService {
     return signOut(this._auth);
   }
 }
+
+export const authService = new AuthService();

@@ -12,6 +12,9 @@ import "./pages/favorites/favorites.component";
 import "./pages/film/film.component";
 import "./pages/not-found/not-found.component";
 import "./components/toast/toast.component";
+import "./components/input/input.component";
+import "./components/button/button.component";
+import "./components/loader/loader.component";
 
 export class App extends Component {
   constructor() {
