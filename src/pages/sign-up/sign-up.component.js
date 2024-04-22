@@ -21,14 +21,14 @@ export class SignUp extends Component {
   toggleIsLoading = () => {
     this.setState({
       ...this.state,
-      isLoading: !this.state.isLoading,
+      isLoading: !this.state.isLoading, //  инвертируется (если было true, станет false, и наоборот).
     });
-  };
+  }; // используется для переключения состояния isLoading
 
   registerUser = (evt) => {
     evt.preventDefault(); // предотвращаем перезаргузку страницы, что бы браузер не делал никаких запросов
-    const formData = extractFormData(evt.target);
-    this.toggleIsLoading();
+    const formData = extractFormData(evt.target); // извлекает данные из формы в объект formData
+    this.toggleIsLoading(); // отображения индикатора загрузки
     authService
       .signUp(formData.email, formData.password)
       .then((data) => {
@@ -39,7 +39,7 @@ export class SignUp extends Component {
         useToastNotification({ message: error.message }); // тип не указываем так как по умолчанию функция принимает тип эрор
       })
       .finally(() => {
-        this.toggleIsLoading();
+        this.toggleIsLoading(); // finally переключает загрузку обратно на false
       }); // then - если промис завершился успешно, catch - если промис завершился с ошибкой, finally вызывается в любом случае
   };
 

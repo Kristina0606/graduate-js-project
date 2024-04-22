@@ -15,6 +15,10 @@ import "./components/toast/toast.component";
 import "./components/input/input.component";
 import "./components/button/button.component";
 import "./components/loader/loader.component";
+import { authService } from "./services/Auth";
+import { useToastNotification } from "./hooks/useToastNotification";
+import { store } from "./store/Store";
+import { useUserStore } from "./hooks/useUserStore";
 
 export class App extends Component {
   constructor() {
@@ -25,6 +29,35 @@ export class App extends Component {
     this.state = {
       isLoading: false,
     };
+  }
+
+  toggleIsLoading = () => {
+    this.setState({
+      ...this.state,
+      isLoading: !this.state.isLoading, //  инвертируется (если было true, станет false, и наоборот).
+    });
+  }; // используется для переключения состояния isLoading
+
+  initializeApp() {
+    this.toggleIsLoading();
+    const { setUser } = useUserStore();
+    authService
+      .authorizeUser()
+      .then((user) => {
+        if (user.uid) {
+          setUser({ ...user });
+        }
+      })
+      .catch((error) => {
+        useToastNotification({ message: error.message });
+      })
+      .finally(() => {
+        this.toggleIsLoading();
+      });
+  } // проверяем авторизован ли пользователь
+
+  componentDidMount() {
+    this.initializeApp();
   }
 }
 

@@ -4,11 +4,19 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 export class AuthService {
   constructor() {
-    this._auth = getAuth(firebaseService.app);
+    this._auth = getAuth(firebaseService.app); // инициализируется объект аутентификации (_auth) с помощью функции.
+    //Это позволяет приложению взаимодействовать с сервисами аутентификации Firebase.
+  }
+
+  authorizeUser() {
+    return new Promise((resolve, reject) => {
+      onAuthStateChanged(this._auth, resolve, reject);
+    }); // функция для авторизации пользователя
   }
 
   signIn(email, password) {
