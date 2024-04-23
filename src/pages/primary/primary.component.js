@@ -1,6 +1,7 @@
 import template from "./primary.template.hbs";
 import { Component } from "../../core/Component";
 import { ROUTES } from "../../constants/routes";
+import { moviesData } from "./filmsData";
 
 export class PrimaryPage extends Component {
   constructor() {
@@ -8,7 +9,9 @@ export class PrimaryPage extends Component {
     this.template = template({
       routes: ROUTES,
     });
-    this.state = {};
+    this.state = {
+      movies: moviesData,
+    };
   }
 }
 
