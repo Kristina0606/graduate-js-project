@@ -29,7 +29,7 @@ export const moviesData = [
   {
     id: 4,
     img: "https://upload.wikimedia.org/wikipedia/ru/d/d1/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%C2%AB%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%21%C2%BB.jpg",
-    title: "Bitter!",
+    title: "Bitter",
     description:
       "Progressive and talented Natasha and Roma dream of a European wedding by the sea... but Natasha’s stepfather has a different scenario. The coarse official of the city administration considers the celebration as a springboard for his own career and strives to arrange everything «properly». Young people will have an unforgettable evening in the restaurant «Golden» with a full set of boring rituals. Unable to fight, the boys decide to hold their dream wedding in secret from conservative relatives. But by an accident, the two celebrations merge.",
     rating: "5.3",
@@ -65,7 +65,7 @@ export const moviesData = [
   {
     id: 8,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9_96lMybpxbq-PvYRidbf1ECLMIcUzhRhF8f4dca2Q&s",
-    title: "The Vegas Bachelor Party",
+    title: "Vegas boys",
     description:
       "They wanted to have an unforgettable bachelor party in Vegas. But now they need to remember exactly what happened: what kind of child is sitting in the closet of the hotel room? How did a tiger get into the bathroom? Why doesn’t one of them have a tooth? And most importantly, where did the groom go? What the guys did at the party is nothing compared to what they’re gonna have to do sober when they’re going step by step rebuilding last night.",
     rating: "7.9",
@@ -73,7 +73,7 @@ export const moviesData = [
   },
   {
     id: 9,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ylZOjXAoJZriZ1cfFd0AVhWzxb3SDUIRq1TocHJOfw&s",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPziep-JMjobIMo_EbvPg1iN7wybMWGfG44iqvFFlkqQ&s",
     title: "Firs",
     description:
       "New Year events take place in 11 cities: Kaliningrad, Kazan, Perm, Ufa, Bavly, Ekaterinburg, Krasnoyarsk, Yakutsk, Novosibirsk, Saint Petersburg and Moscow. Heroes of the film - taxi driver and pop diva, businessman and actor, snowboarder and skier, student and pensioner, firefighter and headmistress, thief and policeman, guest worker and president of Russia. All of them find themselves on the eve of the New Year in a very difficult situation, coming out of which only a miracle will help them... Or the six-handshake theory, which is that every person on earth knows the other through six acquaintances.",
@@ -101,7 +101,7 @@ export const moviesData = [
   {
     id: 12,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvgQh4YaPD1QyS_4mNbgpY_nXU7Ttu7kJeix8k20317w&s",
-    title: "Spider Man",
+    title: "Spiderman",
     description:
       "Peter Parker is an ordinary schoolboy. One day he went on a class field trip where he was bitten by a strange mutant spider. After a while, the guy felt an inhuman strength and agility in movement, and most importantly - the ability to climb the walls and throw a steel web. His powers focus on protecting the weak. Peter becomes a real superhero named Spider-Man, who helps people and fights crime. But where there’s a superhero, sooner or later, there’s always a supervillain...",
     rating: "7.7",
