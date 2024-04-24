@@ -11,12 +11,6 @@ export class PrimaryPage extends Component {
     });
     this.state = {
       movies: moviesData,
-      links: [
-        {
-          label: "Log out",
-          href: ROUTES.home,
-        },
-      ],
     };
   }
 }

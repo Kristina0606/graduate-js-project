@@ -7,6 +7,7 @@ export const moviesData = [
       "The most common stereotypical Barbie lives in the gorgeous pink Barbiland, and every day is perfect. She changes outfits, sunbathes on the beach, spends time with the other Barbies, the day ends with a noisy dance party, and in this positive sparkling mess, the lover Ken is just an appendix to Barbie. One day, the doll is haunted by thoughts of death, and her feet suddenly turn flat under her heels. In order to figure this out and get back to the plastic world, Barbie will have to go to the real world and find her mistress. Beyond it, an intellectual life without his idol Ken is linked.",
     rating: "6.6",
     year: 2023,
+    category: "Romantic",
   },
   {
     id: 2,
