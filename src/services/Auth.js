@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 
 export class AuthService {
@@ -17,6 +18,14 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       onAuthStateChanged(this._auth, resolve, reject);
     }); // функция для авторизации пользователя
+  }
+
+  getCurrentUser() {
+    return this._auth.currentUser;
+  }
+
+  updateUserProfile(data) {
+    return updateProfile(this._auth.currentUser, data);
   }
 
   signIn(email, password) {

@@ -12,7 +12,7 @@ export const moviesData = [
   {
     id: 2,
     img: "https://upload.wikimedia.org/wikipedia/en/9/99/Taxi_Driver_TV_series.jpg",
-    title: "Taxi driver",
+    title: "Taxi",
     description:
       "As a result of the military coup in December 1979, South Korean President Chung Doo-hwan became president. Following the shooting of a student demonstration in Gwangju City, local residents decide to march en masse against the regime. The dictator throws military units to suppress the rebellion.Meanwhile, a German newspaper reporter in Tokyo decides to infiltrate Gwangju to tell the outside world what is happening in Korea. A simple Seoul taxi driver, Man-Sop, must bring the German into the combat zone and back, who had no idea that he would soon have to hide from military patrols.",
     rating: "8.2",
@@ -57,7 +57,7 @@ export const moviesData = [
   {
     id: 7,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkfY5yK74SbPOvzcBcPjlxJu7Ppj0UNderKpio2YATcA&s",
-    title: "The Matrix",
+    title: "Matrix",
     description:
       "Thomas Anderson’s life is divided into two parts: by day, he is the average office worker who gets a slap on the wrist from his superiors, and by night, he turns into a hacker named Neo, and there’s no net he can’t get into. But one day, everything changes. Thomas learns the terrible truth about reality.",
     rating: "8.5",
@@ -66,7 +66,7 @@ export const moviesData = [
   {
     id: 8,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9_96lMybpxbq-PvYRidbf1ECLMIcUzhRhF8f4dca2Q&s",
-    title: "Vegas boys",
+    title: "Vegas",
     description:
       "They wanted to have an unforgettable bachelor party in Vegas. But now they need to remember exactly what happened: what kind of child is sitting in the closet of the hotel room? How did a tiger get into the bathroom? Why doesn’t one of them have a tooth? And most importantly, where did the groom go? What the guys did at the party is nothing compared to what they’re gonna have to do sober when they’re going step by step rebuilding last night.",
     rating: "7.9",

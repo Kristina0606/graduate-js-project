@@ -6,6 +6,7 @@ import { useToastNotification } from "../../hooks/useToastNotification";
 import { useNavigate } from "../../hooks/useNavigate";
 import { authService } from "../../services/Auth";
 import { TOAST_TYPE } from "../../constants/toast";
+import { useUserStore } from "../../hooks/useUserStore";
 
 export class SignIn extends Component {
   constructor() {
@@ -31,11 +32,13 @@ export class SignIn extends Component {
 
   signInUser = (evt) => {
     evt.preventDefault(); // предотвращаем перезаргузку страницы, что бы браузер не делал никаких запросов
+    const { setUser } = useUserStore();
     const formData = extractFormData(evt.target); // извлекает данные из формы в объект formData
     this.toggleIsLoading(); // отображения индикатора загрузки
     authService
       .signIn(formData.email, formData.password)
       .then((data) => {
+        setUser({ ...data.user });
         useToastNotification({ message: "Success!", type: TOAST_TYPE.success });
         useNavigate(ROUTES.primary);
       })

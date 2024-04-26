@@ -6,6 +6,8 @@ import { authService } from "../../services/Auth";
 import { useToastNotification } from "../../hooks/useToastNotification";
 import { TOAST_TYPE } from "../../constants/toast";
 import { useNavigate } from "../../hooks/useNavigate";
+import { useUserStore } from "../../hooks/useUserStore";
+import { data } from "autoprefixer";
 
 export class SignUp extends Component {
   constructor() {
@@ -27,13 +29,20 @@ export class SignUp extends Component {
 
   registerUser = (evt) => {
     evt.preventDefault(); // предотвращаем перезаргузку страницы, что бы браузер не делал никаких запросов
-    const formData = extractFormData(evt.target); // извлекает данные из формы в объект formData
+    const { email, password, ...rest } = extractFormData(evt.target); // извлекает данные из формы в объект formData
     this.toggleIsLoading(); // отображения индикатора загрузки
+    const { setUser } = useUserStore();
     authService
-      .signUp(formData.email, formData.password)
-      .then((data) => {
-        useToastNotification({ message: "Success!", type: TOAST_TYPE.success });
-        useNavigate(ROUTES.primary);
+      .signUp(email, password)
+      .then(() => {
+        authService.updateUserProfile(rest).then(() => {
+          setUser({ ...authService.getCurrentUser() });
+          useToastNotification({
+            message: "Success!",
+            type: TOAST_TYPE.success,
+          });
+          useNavigate(ROUTES.primary);
+        });
       })
       .catch((error) => {
         useToastNotification({ message: error.message }); // тип не указываем так как по умолчанию функция принимает тип эрор

@@ -54,7 +54,8 @@ export class App extends Component {
       .finally(() => {
         this.toggleIsLoading();
       });
-  } // проверяем авторизован ли пользователь
+  }
+  // проверяем авторизован ли пользователь
 
   componentDidMount() {
     this.initializeApp();
