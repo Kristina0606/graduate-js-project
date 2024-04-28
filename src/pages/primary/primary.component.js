@@ -18,6 +18,7 @@ export class PrimaryPage extends Component {
       isLoading: false,
       user: null,
       movies: moviesData,
+      favoriteMovies: [],
     };
   }
 
@@ -34,7 +35,7 @@ export class PrimaryPage extends Component {
     authService
       .logOut()
       .then(() => {
-        setUser(null);
+        setUser(null); // обнуляем юзера в сторе
         useToastNotification({ type: TOAST_TYPE.success, message: "Success!" });
         useNavigate(ROUTES.signIn);
       })
@@ -48,17 +49,27 @@ export class PrimaryPage extends Component {
 
   onClick = ({ target }) => {
     const logoutLink = target.closest(".logout-link");
+    const moreButton = target.closest(".more-button");
+
     if (logoutLink) {
       return this.logout();
+    }
+
+    if (moreButton) {
+      const movieId = moreButton.dataset.movieId;
+      if (movieId) {
+        const filmPageUrl = `${ROUTES.film}/${movieId}`;
+        window.location.assign(filmPageUrl);
+      }
     }
   };
 
   setUser() {
-    const { getUser } = useUserStore();
+    const { getUser } = useUserStore(); // вытаскиваем из глобального стора пользователя
     this.setState({
       ...this.state,
       user: getUser(),
-    });
+    }); // сохраняем его в стейт
   }
 
   componentDidMount() {

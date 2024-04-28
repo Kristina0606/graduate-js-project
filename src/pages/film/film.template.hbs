@@ -1,1 +1,58 @@
-<h1>film</h1>
+<div class="relative">
+    <div class="grid grid-rows-layout  w-full">
+        <header class="p-5 bg-black flex w-full z-50 fixed shadow-black shadow-xl">
+            <div class="flex grow">
+                <hgroup class="flex gap-5">
+                    <img src="../../../images/popcorn-svgrepo-com.svg" width="50" height="50" alt="logo">
+                    <h1
+                        class="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-50 sm:text-5xl">
+                        MovieMingle</h1>
+                </hgroup>
+            </div>
+
+            <div class="flex gap-10 self-end mb-3">
+
+                <hgroup class="flex gap-1">
+                    <img src="../../../images/heart-svgrepo-com.svg" width="20" height="20" alt="saved-items-logo">
+                    <route-link class="text-slate-50 text-lg" href="${props.routes.favorites}"
+                        label="Saved Items"></route-link>
+
+                </hgroup>
+                <hgroup class="flex gap-1">
+                    <img src="../../../images/user-alt-1-svgrepo-com (2).svg" width="20" height="20" alt="user-logo">
+                    <route-link label="Email" class="text-slate-50 text-lg"></route-link>
+                </hgroup>
+                <hgroup class="flex gap-1">
+                    <img src="../../../images/logout-svgrepo-com (5).svg" alt="logout-icon" class="cursor-pointer"
+                        width="20" height="20">
+
+                    <route-link class="logout-link text-slate-50 text-lg" href="#" label="Log Out"></route-link>
+
+                </hgroup>
+
+            </div>
+        </header>
+        <div class="bg-workspace bg-cover mt-20 pt-2 bg-no-repeat h-screen w-full fixed"></div>
+    </div>
+    <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black/[0.5]">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <div class="p-4 md:p-5 space-y-4  overflow-auto">
+                {{#if movie}}
+                <img class="flex rounded-lg h-48 object-cover" src="{{movie.img}}" alt="{{this.title}}">
+                <h3 class="text-xl font-semibold text-gray-200 dark:text-white">{{movie.title}}</h3>
+                <p>Rating: {{movie.rating}}</p>
+                <p>Year: {{movie.year}}</p>
+                <p>Description: {{movie.description}}</p>
+                <div class="p-4 md:p-5 space-y-4 modal-body max-h-[700px] overflow-auto"></div>
+                <div class="flex items-center p-4 md:p-5 rounded-b">
+                    <button
+                        class="modal-reject-trigger px-4 py-2 bg-yellow-600 text-slate-50 text-base font-medium rounded focus:outline-none border-none hover:bg-yellow-700">
+                        add
+                        to "Saved"
+                    </button>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

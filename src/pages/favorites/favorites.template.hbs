@@ -59,3 +59,41 @@
     </div>
 
 </div>
+
+
+<div class="relative">
+    <div class="grid grid-rows-layout  w-full">
+        <header class="p-5 bg-black flex justify-center fixed w-full z-50 fixed">
+            <hgroup class="flex gap-5">
+                <img src="../../../images/popcorn-svgrepo-com.svg" width="50" height="50" alt="logo">
+                <h1 class="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-50 sm:text-5xl">
+                    MovieMingle</h1>
+            </hgroup>
+        </header>
+        <div class="bg-workspace bg-no-repeat h-screen w-full fixed"></div>
+        <div class="favorites-container flex justify-center mt-8 absolute items-center translate-x-2/4" style="padding-top: 90px;">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                {{#each favoriteMovies}}
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                        <div class="flex gap-5">
+                            <img class="h-48 object-cover" src="{{this.img}}" alt="{{this.title}}">
+                            <div class="flex flex-col py-2 gap-3">
+                                <p>Rating: {{this.rating}}</p>
+                                <p>Year: {{this.year}}</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex-grow flex flex-col justify-between">
+                            <h2 class="text-xl font-bold mb-2 text-center">{{this.title}}</h2>
+                            <button class="mt-2 w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 remove-button"
+                                    type="button" data-index="{{@index}}">Remove
+                            </button>
+                            <button class="mt-2 w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 more-button"
+                                    type="button">More
+                            </button>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

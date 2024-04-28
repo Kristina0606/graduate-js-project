@@ -1,3 +1,4 @@
+<ui-loader loading="{{isLoading}}" class-name="z-6000 bg-white/70 h-screen w-full fixed"></ui-loader>
 <div class="relative">
     <div class="grid grid-rows-layout  w-full">
         <header class="p-5 bg-black flex w-full z-50 fixed shadow-black shadow-xl">
@@ -18,7 +19,7 @@
                 </hgroup>
                 <hgroup class="flex gap-1">
                     <img src="../../../images/user-alt-1-svgrepo-com (2).svg" width="20" height="20" alt="user-logo">
-                    <route-link label="Email" class="text-slate-50 text-lg"></route-link>
+                    <a href="mailto:{{user.email}}" class="text-slate-50 text-lg">{{user.email}}</a>
                 </hgroup>
                 <hgroup class="flex gap-1">
                     <img src="../../../images/logout-svgrepo-com (5).svg" alt="logout-icon" class="cursor-pointer" width="20" height="20">
@@ -31,6 +32,7 @@
         </header>
         
         <div class="bg-workspace bg-cover mt-20 pt-2 bg-no-repeat h-screen w-full fixed"></div>
+        
             <div class="flex mb-20 justify-center mt-8 absolute items-center flex-col translate-x-1/3" style="padding-top: 90px;">
             <form class="mb-10">
             <div class="flex">
@@ -64,7 +66,7 @@
             </form>
             <div class="mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-16">
                 {{#each movies}}
-                <div class="bg-black/70 text-slate-100/70 text-sm font-medium border-none h-80 w-56 rounded-lg shadow-lg overflow-hidden flex flex-col   max-w-sm mx-auto transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-yellow-500  hover:transition hover:scale-105">
+                <div data-id="{{this.id}}" class="bg-black/70 text-slate-100/70 text-sm font-medium border-none h-80 w-56 rounded-lg shadow-lg overflow-hidden flex flex-col   max-w-sm mx-auto transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-yellow-500  hover:transition hover:scale-105">
                     <div class="flex gap-2">
                         <img class="flex rounded-lg h-48 object-cover" src="{{this.img}}" alt="{{this.title}}">
                         <div class="flex flex-col py-2 gap-3">
@@ -86,9 +88,10 @@
                             </div>
                         </hgroup>
                         
-                        <button class="mt-2 w-full px-4 py-2 bg-yellow-600 text-slate-50 text-base font-medium rounded transition hover:scale-105 hover:bg-yellow-700"
-                            type="button">More
+                        <button class="more-button mt-2 w-full px-4 py-2 bg-yellow-600 text-slate-50 text-base font-medium rounded transition hover:scale-105 hover:bg-yellow-700"
+                            type="button" data-movie-id="{{this.id}}">More
                         </button>
+                        
                     </div>
                 </div>
                 {{/each}}
