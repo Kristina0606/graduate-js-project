@@ -4,7 +4,6 @@ export const useUserStore = () => {
   const setUser = (user) => {
     store.setState({ user }); // устанавливает пользователя
     localStorage.setItem("user", JSON.stringify(user));
-    console.log("user", user);
   };
 
   const getUser = () => {

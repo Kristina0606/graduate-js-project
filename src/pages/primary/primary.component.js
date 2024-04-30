@@ -70,6 +70,45 @@ export class PrimaryPage extends Component {
     }
   }
 
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    const { initialState } = this.state;
+
+    if (!initialState) {
+      return;
+    }
+
+    if (name === "category") {
+      const selectedCategory = value;
+      let filteredMovies;
+      if (selectedCategory === "all") {
+        filteredMovies = initialState.slice();
+      } else {
+        filteredMovies = initialState.filter(
+          (movie) => movie.category === selectedCategory
+        );
+      }
+      this.setState({
+        filteredMovies: filteredMovies,
+        movies: filteredMovies,
+        initialState: moviesData,
+      });
+
+      const categoryDropdown = document.getElementById("category-dropdown");
+      categoryDropdown.value = selectedCategory;
+    } else if (name === "search") {
+      const searchText = value.trim().toLowerCase();
+      const filteredMovies = initialState.filter((movie) =>
+        movie.title.toLowerCase().includes(searchText)
+      );
+      this.setState({
+        searchText: searchText,
+        filteredMovies: filteredMovies,
+        initialState: moviesData,
+      });
+    }
+  };
+
   onClick = ({ target }) => {
     // Функция onClick срабатывает при клике на элемент.
     // Она получает объект события в качестве аргумента и деструктурирует свойство 'target'.
@@ -84,7 +123,6 @@ export class PrimaryPage extends Component {
       const movieIndex = Array.from(
         heartIcon.closest(".grid").querySelectorAll(".trigger")
       ).indexOf(heartIcon);
-      console.log(movieIndex);
       if (movieIndex !== -1) {
         const movie = this.state.filteredMovies[movieIndex];
         this.addToLocalStorage(movie);
@@ -111,10 +149,15 @@ export class PrimaryPage extends Component {
   componentDidMount() {
     this.setUser();
     this.addEventListener("click", this.onClick);
+    this.addEventListener("change", this.handleChange);
+    const searchInput = document.getElementById("search-dropdown");
+    searchInput.addEventListener("input", this.handleChange);
   }
 
   componentWillUnmount() {
     this.removeEventListener("click", this.onClick);
+    const searchInput = document.getElementById("search-dropdown");
+    searchInput.removeEventListener("input", this.handleChange);
   }
 }
 
