@@ -13,12 +13,15 @@ export class PrimaryPage extends Component {
     super();
     this.template = template({
       routes: ROUTES,
+      searchDropdownClass: "search-dropdown",
     });
     this.state = {
       isLoading: false,
       user: null,
       movies: moviesData,
-      favoriteMovies: [],
+      filteredMovies: moviesData,
+      initialState: moviesData,
+      searchText: "",
     };
   }
 
@@ -47,12 +50,45 @@ export class PrimaryPage extends Component {
       });
   };
 
+  addToLocalStorage(movie) {
+    const currentUser = authService.getCurrentUser(); // получаем текущего пользователя
+    if (currentUser) {
+      const userFavoritesKey = `favorites_${currentUser.uid}`; // создаем ключ для хранения избранных фильмов
+      let savedMovies =
+        JSON.parse(localStorage.getItem(userFavoritesKey)) || []; // получаем избранные фильмы пользователя или создаем массив
+      const isMovieAlreadySaved = savedMovies.some(
+        (savedMovies) => savedMovies.id === movie.id
+      ); // проверяем был ли фильм уже добавлен в изьранное
+      if (!isMovieAlreadySaved) {
+        savedMovies.unshift(movie);
+        localStorage.setItem(userFavoritesKey, JSON.stringify(savedMovies));
+      }
+    } else {
+      console.log(
+        "Пользователь не аунтефицирован. Невозможно добавить фильм в избранное"
+      );
+    }
+  }
+
   onClick = ({ target }) => {
+    // Функция onClick срабатывает при клике на элемент.
+    // Она получает объект события в качестве аргумента и деструктурирует свойство 'target'.
     const logoutLink = target.closest(".logout-link");
     const moreButton = target.closest(".more-button");
-
+    const heartIcon = target.closest(".trigger");
     if (logoutLink) {
       return this.logout();
+    }
+
+    if (heartIcon) {
+      const movieIndex = Array.from(
+        heartIcon.closest(".grid").querySelectorAll(".trigger")
+      ).indexOf(heartIcon);
+      console.log(movieIndex);
+      if (movieIndex !== -1) {
+        const movie = this.state.filteredMovies[movieIndex];
+        this.addToLocalStorage(movie);
+      }
     }
 
     if (moreButton) {
