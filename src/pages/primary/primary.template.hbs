@@ -4,7 +4,7 @@
         <header class="p-5 bg-black flex w-full z-50 fixed shadow-black shadow-xl">
             <div class="flex grow">
                 <hgroup class="flex gap-5">
-                    <img src="../../../images/popcorn-svgrepo-com.svg" width="50" height="50" alt="logo">
+                    <img src="/popcorn-svgrepo-com.svg" width="50" height="50" alt="logo">
                     <route-link label="MovieMingle" href="${props.routes.primary}"
                         class="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-50 sm:text-5xl">
                         MovieMingle</route-link>
@@ -14,16 +14,16 @@
            <div class="flex gap-10 self-end mb-3">
             
                 <hgroup class="flex gap-1">
-                    <img src="../../../images/heart-svgrepo-com.svg" width="20" height="20" alt="saved-items-logo">
+                    <img src="/heart-svgrepo-com.svg" width="20" height="20" alt="saved-items-logo">
                     <route-link class="text-slate-50 text-lg" href="${props.routes.favorites}" label="Saved Items"></route-link>
                     
                 </hgroup>
                 <hgroup class="flex gap-1">
-                    <img src="../../../images/user-alt-1-svgrepo-com (2).svg" width="20" height="20" alt="user-logo">
+                    <img src="/user-alt-1-svgrepo-com (2).svg" width="20" height="20" alt="user-logo">
                     <a href="mailto:{{user.email}}" class="text-slate-50 text-lg">{{user.email}}</a>
                 </hgroup>
                 <hgroup class="flex gap-1">
-                    <img src="../../../images/logout-svgrepo-com (5).svg" alt="logout-icon" class="cursor-pointer" width="20" height="20">
+                    <img src="/logout-svgrepo-com (5).svg" alt="logout-icon" class="cursor-pointer" width="20" height="20">
                     
                     <route-link class="logout-link text-slate-50 text-lg" href="#" label="Log Out"></route-link>
                     
@@ -68,7 +68,7 @@
             <div class="mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-16">
                 {{#if filteredMovies.length}}
                 {{#each filteredMovies}}
-                <div data-id="{{this.id}}" class="bg-black/70 text-slate-100/70 text-sm font-medium border-none h-80 w-56 rounded-lg shadow-lg overflow-hidden flex flex-col   max-w-sm mx-auto transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-yellow-500  hover:transition hover:scale-105">
+                <div data-id="{{this.id}}" class="bg-black/70 text-slate-100/70 text-sm font-medium border-none h-80 w-56 rounded-lg shadow-lg overflow-hidden flex flex-col   max-w-sm mx-auto transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-black  hover:transition hover:scale-105">
                     <div class="flex gap-2">
                         <img class="flex rounded-lg h-48 object-cover" src="{{this.img}}" alt="{{this.title}}">
                         <div class="flex flex-col py-2 gap-3">
@@ -81,7 +81,7 @@
                             <h2 class="text-xl text-center">{{this.title}}</h2>
                             <div class="trigger">
                                 <button data-popover-target="popover-top" data-popover-placement="top" type="button">
-                                    <img src="../../../images/heart-svgrepo-com.svg" width="20" height="20" alt="fav-item-logo" class="mt-1 relative">
+                                    <img src="/heart-svgrepo-com.svg" width="20" height="20" alt="fav-item-logo" class="mt-1 relative">
                                 
                                 </button>
                             </div>
@@ -110,7 +110,6 @@
                 </div>
             </footer>
         </div>
-    \
     </div>
     
 </div>
